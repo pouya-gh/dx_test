@@ -6,3 +6,17 @@ fa:
     register:
       text: 'عضویت'
       success: 'تبریک! به devex خوش آمدید.'
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              invalid: 'آدرس ایمیل وارد شده صحیح نیست.'
+            password:
+              too_short: 'کلمه عبور حداقل باید شامل ۴ کاراکتر باشد'
+              blank: 'کلمه عبور نمی تواند خالی باشد.'
+              too_long: 'کلمه عبور حداکثر می تواند شامل ۳۰ کاراکتر باشد.'
+            password_confirmation:
+              confirmation: 'کلمه عبور و تکرار آن باید یکی باشند.'
+              blank: 'تکرار کلمه عبور نمی تواند خالی باشد.'
