@@ -5,14 +5,14 @@ feature "user sign up" do
 
   scenario "with valid email and password" do
     sign_up(user)
-    expect(page).to have_content(t('user.register.success'))
+    expect(page).to have_content(I18n.translate('user.register.success'))
   end
 
   def sign_up(user)
-    visit sign_up_path
-    fill_in t('user.email'), with: user.email
-    fill_in t('user.password'), with: user.password
-    fill_in t('user.password_confirmation'), with: user.password_confirmation
-    click_button t('user.register.text')
+    visit new_user_path
+    fill_in I18n.translate('user.email'), with: user.email
+    fill_in I18n.translate('user.password'), with: user.password
+    fill_in I18n.translate('user.password_confirmation'), with: user.password_confirmation
+    click_button I18n.translate('user.register.text')
   end
 end
