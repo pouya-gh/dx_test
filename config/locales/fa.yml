@@ -6,6 +6,7 @@ fa:
     register:
       text: 'عضویت'
       success: 'تبریک! به devex خوش آمدید.'
+      fail: 'اطلاعات وارد شده صحیح نیست'
   activerecord:
     errors:
       models:

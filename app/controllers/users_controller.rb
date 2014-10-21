@@ -7,9 +7,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     begin
       @user.save!
-      flash.now[:success] = t('user.register.success')
+      flash[:success] = t('user.register.success')
       redirect_to @user
     rescue
+      flash.now[:danger] = t('user.register.fail')
       render :new
     end
   end
