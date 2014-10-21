@@ -36,9 +36,6 @@ group :test, :development do
   # use rspec instead of minitest
   gem "rspec-rails", "~> 2.14.1"
 
-  # spead up tests
-  gem "spork-rails", "~> 4.0.0"
-
   # generating factories instead of fixtures
   gem "factory_girl_rails", "~> 4.4.1"
 
@@ -47,7 +44,6 @@ group :test, :development do
 
   # automatic testing environment
   gem "guard-rspec", "~> 4.2.8"
-  gem "guard-spork", "~> 1.5.1"
   gem "guard-rails", "~> 0.5.0"
 
   # installing capybara for browser integration
@@ -63,7 +59,7 @@ group :test, :development do
 end
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use unicorn as the app server
 # gem 'unicorn'
