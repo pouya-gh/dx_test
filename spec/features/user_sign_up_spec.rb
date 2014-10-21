@@ -3,9 +3,14 @@ require 'spec_helper'
 feature "user sign up" do
   let(:user) { build(:user) }
 
-  scenario "with valid email and password" do
+  scenario "with valid data" do
     sign_up(user)
     expect(page).to have_content(I18n.translate('user.register.success'))
+  end
+
+  scenario "with invalid data" do
+    sign_up(build(:user, email: 'test@test'))
+    expect(page).to have_content(I18n.translate('user.register.fail'))
   end
 
   def sign_up(user)
