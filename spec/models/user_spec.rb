@@ -55,5 +55,15 @@ describe User do
         expect(build(:user, email: email)).to be_invalid
       end
     end
+
+    it "is required" do
+      expect(build(:user, email: "")).to be_invalid
+    end
+
+    it "is unique" do
+      user.save
+      user_with_same_email = User.new(email: user.email, password: '1234', password_confirmation: '1234')
+      expect(user_with_same_email).to have(1).errors_on(:email)
+    end
   end
 end
