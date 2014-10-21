@@ -47,4 +47,13 @@ describe User do
       expect(user).to be_invalid
     end
   end
+
+  describe "email" do
+    it "follows simple email format" do
+      invalid_email_addresses = ["test@com", "test.com", "test@.com"]
+      invalid_email_addresses.each do |email|
+        expect(build(:user, email: email)).to be_invalid
+      end
+    end
+  end
 end
