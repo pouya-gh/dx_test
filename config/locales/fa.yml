@@ -1,0 +1,8 @@
+fa:
+  user:
+    email: 'ایمیل'
+    password: 'کلمه عبور'
+    password_confirmation: 'تکرار کلمه عبور'
+    register:
+      text: 'عضویت'
+      success: 'تبریک! به devex خوش آمدید.'
