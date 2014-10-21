@@ -32,6 +32,36 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :test, :development do
+  # use rspec instead of minitest
+  gem "rspec-rails", "~> 2.14.1"
+
+  # spead up tests
+  gem "spork-rails", "~> 4.0.0"
+
+  # generating factories instead of fixtures
+  gem "factory_girl_rails", "~> 4.4.1"
+
+  # generating fake data
+  gem "faker", "~> 1.3.0"
+
+  # automatic testing environment
+  gem "guard-rspec", "~> 4.2.8"
+  gem "guard-spork", "~> 1.5.1"
+  gem "guard-rails", "~> 0.5.0"
+
+  # installing capybara for browser integration
+  gem "capybara", "~> 2.2.1"
+
+  # use pry as rails console
+  gem "pry-rails", "~> 0.3.2"
+
+  # improve rails errors page
+  gem "better_errors", "~> 1.1.0"
+
+  gem "terminal-notifier-guard", "~> 1.5.3"
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
