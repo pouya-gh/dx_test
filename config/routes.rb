@@ -1,5 +1,6 @@
 Devex2::Application.routes.draw do
   get '/home', to: 'static_pages#home'
+  get '/login', to: 'sessions#new'
   
   resources :users, only: [:new, :create, :show]
   resources :sessions, only: [:new, :create]
