@@ -1,8 +1,11 @@
 fa:
+  devex:
+    title: 'Devex'
   user:
     email: 'ایمیل'
     password: 'کلمه عبور'
     password_confirmation: 'تکرار کلمه عبور'
+    profile: 'پروفایل'
     register:
       text: 'عضویت'
       success: 'تبریک! به devex خوش آمدید.'
