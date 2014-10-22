@@ -13,7 +13,7 @@ feature "user sign up" do
   end
 
   def as_a_guest_user
-    @user = build(:user)
+    @user = User.new
   end
 
   def given_i_am_in_sign_up_page
