@@ -8,6 +8,6 @@ class User < ActiveRecord::Base
   def regenerate_auth_token
     salt = "sad <dsadj9p8j>ene*(<Udh>08b4ejbd lkjnLN@@as~~2e3$%{08}</Udh></dsadj9p8j>"
     text = Digest::MD5.hexdigest(salt + email.to_s + Time.now.to_s)
-    update_column(:auth_token, text)
+    update_columns(auth_token: text)
   end
 end
