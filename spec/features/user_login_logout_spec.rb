@@ -33,7 +33,7 @@ feature "login logout" do
   end
 
   def and_see_login_link_in_the_navbar
-    expect(page).to find(".navbar").find_link(I18n.translate('user.login.text'))
+    expect(page).to have_link(I18n.translate('user.login.text'))
   end
 
   # successful login steps
