@@ -10,6 +10,10 @@ fa:
       text: 'عضویت'
       success: 'تبریک! به devex خوش آمدید.'
       fail: 'اطلاعات وارد شده صحیح نیست'
+    login:
+      text: 'ورود'
+    logout:
+      text: 'خروج'
   activerecord:
     errors:
       models:

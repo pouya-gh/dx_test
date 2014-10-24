@@ -1,7 +1,10 @@
 Devex2::Application.routes.draw do
   get '/home', to: 'static_pages#home'
+  get '/login', to: 'sessions#new'
+  get '/logout', to: 'sessions#destroy'
   
   resources :users, only: [:new, :create, :show]
+  resources :sessions, only: [:new, :create]
 
   root 'static_pages#home'
   # The priority is based upon order of creation: first created -> highest priority.
