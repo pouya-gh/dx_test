@@ -26,4 +26,19 @@ describe SessionsController do
       expect(response.cookies['auth_token']).to eql @user.auth_token
     end
   end
+
+  describe "POST #destroy" do
+    before do
+      @user = create(:user)
+      get :destroy
+    end
+
+    it "removes the auth_token cookie" do
+      expect(response.cookies['auth_token']).to eql nil
+    end
+
+    it "redirects user to root path" do
+      expect(response).to redirect_to root_path
+    end
+  end
 end
