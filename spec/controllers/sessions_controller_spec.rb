@@ -30,6 +30,7 @@ describe SessionsController do
   describe "POST #destroy" do
     before do
       @user = create(:user)
+      post :create, session: attributes_for(:user).slice(:email, :password)
       get :destroy
     end
 
