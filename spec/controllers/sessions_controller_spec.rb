@@ -11,11 +11,7 @@ describe SessionsController do
   describe "POST #create" do
     before do
       @user = create(:user)
-    end
-
-    it "creates a cookie with the content of auth_token filed of user" do
       post :create, session: attributes_for(:user).slice(:email, :password)
-      expect(response.cookies[:auth_token]).to eql(@user.auth_token)
     end
 
     it "redirects the user to its profile page" do
