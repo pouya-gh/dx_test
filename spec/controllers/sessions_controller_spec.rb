@@ -21,5 +21,9 @@ describe SessionsController do
     it "sets the current_user to @user" do
       expect(controller.current_user).to eql(@user)
     end
+
+    it "sets auth_token cookie" do
+      expect(response.cookies['auth_token']).to eql @user.auth_token
+    end
   end
 end
