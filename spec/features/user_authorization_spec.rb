@@ -1,10 +1,11 @@
 require 'spec_helper'
 require_relative 'macros/authentication_feature_macro'
-require_relative 'steps/authorization_profile_view_steps.rb'
-include AuthenticationFeatureMacro
-include AuthorizationProfileViewSteps
+require_relative 'steps/authorization_profile_view_steps'
 
 feature "Authorization" do
+  include AuthenticationFeatureMacro
+  include AuthorizationProfileViewSteps
+
   scenario "signed in users redirect to their own profile when try to see other users profile page" do
     given_i_am_already_a_member
     and_i_am_signed_in
