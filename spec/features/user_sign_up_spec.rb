@@ -4,7 +4,6 @@ require_relative 'macros/authentication_feature_macro'
 feature "user sign up" do
   include ApplicationHelper
   include AuthenticationFeatureMacro
-  let(:user) { build(:user) }
 
   scenario "signing up to the website" do
     as_a_guest_user
@@ -15,7 +14,7 @@ feature "user sign up" do
   end
 
   def as_a_guest_user
-    @user = User.new
+    @user = build(:user)
   end
 
   def given_i_am_in_sign_up_page
@@ -23,7 +22,7 @@ feature "user sign up" do
   end
 
   def when_i_submit_the_form_with_valid_data
-    sign_up user
+    sign_up @user
   end
 
   def then_i_should_be_in_my_profile_page
