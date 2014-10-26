@@ -1,11 +1,11 @@
 require 'spec_helper'
 require_relative 'steps/login_steps_macro'
 require_relative 'steps/logout_steps_macro'
+include ApplicationHelper
+include LoginStepsMacro
+include LogoutStepsMacro
 
 feature "login logout" do
-  include ApplicationHelper
-  include LoginStepsMacro
-  include LogoutStepsMacro
   scenario "successful login" do
     given_i_am_already_a_member
     and_i_am_in_login_page
