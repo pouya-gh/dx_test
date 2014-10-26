@@ -1,7 +1,9 @@
 require 'spec_helper'
+require_relative 'macros/authentication_feature_macro'
 
 feature "user sign up" do
   include ApplicationHelper
+  include AuthenticationFeatureMacro
   let(:user) { build(:user) }
 
   scenario "signing up to the website" do
@@ -21,10 +23,7 @@ feature "user sign up" do
   end
 
   def when_i_submit_the_form_with_valid_data
-    fill_in I18n.translate('user.email'), with: user.email
-    fill_in I18n.translate('user.password'), with: user.password
-    fill_in I18n.translate('user.password_confirmation'), with: user.password_confirmation
-    click_button I18n.translate('user.register.text')
+    sign_up user
   end
 
   def then_i_should_be_in_my_profile_page
