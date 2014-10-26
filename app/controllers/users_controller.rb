@@ -17,6 +17,16 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    begin
+      authorize @user
+    rescue Pundit::NotAuthorizedError
+      flash[:warning] = t('authorization.errors.profile_page')
+      if signed_in?
+        redirect_to current_user
+      else
+        redirect_to root_path
+      end
+    end
   end
 
   private
