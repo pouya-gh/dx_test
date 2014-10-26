@@ -30,6 +30,9 @@ gem 'jbuilder', '~> 1.2'
 # Generate Bootstrap Forms
 gem 'bootstrap_form'
 
+# Simple authorization
+gem 'pundit'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
