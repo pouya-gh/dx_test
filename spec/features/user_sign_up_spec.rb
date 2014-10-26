@@ -1,11 +1,12 @@
 require 'spec_helper'
 require_relative 'macros/authentication_feature_macro'
 require_relative 'steps/signup_steps_macro.rb'
-include ApplicationHelper
-include AuthenticationFeatureMacro
-include SignupStepsMacro
 
 feature "user sign up" do
+  include ApplicationHelper
+  include AuthenticationFeatureMacro
+  include SignupStepsMacro
+  
   scenario "signing up to the website" do
     as_a_guest_user
     given_i_am_in_sign_up_page
