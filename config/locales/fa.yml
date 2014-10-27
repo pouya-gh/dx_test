@@ -6,6 +6,8 @@ fa:
     password: 'کلمه عبور'
     password_confirmation: 'تکرار کلمه عبور'
     profile: 'پروفایل'
+    admin:
+      dashboard: 'داشبورد'
     register:
       text: 'عضویت'
       success: 'تبریک! به devex خوش آمدید.'
@@ -35,3 +37,4 @@ fa:
   authorization:
     errors:
       profile_page: 'کاربر گرامی! شما تنها قارد به مشاهده پروفایل خود می باشید.'
+      signin: 'برای مشاهده این صفحه باید وارد شوید.'
