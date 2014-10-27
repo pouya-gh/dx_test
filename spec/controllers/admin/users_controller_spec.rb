@@ -21,6 +21,12 @@ describe Admin::UsersController do
       it "create an admin instance of the User class" do
         expect(assigns(:user)).to eq @user
       end
+
+      it "can only view its own profile" do
+        other_user = create(:user, id: 1, email: 'other_user@test.com')
+        get :show, id: 1
+        expect(response).to redirect_to @user
+      end
     end
 
     context 'not signed in' do
