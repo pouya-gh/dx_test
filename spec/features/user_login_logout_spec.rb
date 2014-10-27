@@ -14,6 +14,13 @@ feature "login logout" do
     then_i_should_be_redirected_to_my_profile_page
   end
 
+  scenario "successful admin login" do
+    given_i_am_a_admin_user
+    and_i_am_in_login_page
+    when_i_fill_the_form_whit_admin_data_and_press_sign_in_button
+    then_i_should_be_in_my_admin_panel
+  end
+
   scenario "successful logout" do
     given_i_am_already_singend_in
     when_i_clicked_on_sign_out_link
