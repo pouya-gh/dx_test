@@ -6,6 +6,8 @@ fa:
     password: 'کلمه عبور'
     password_confirmation: 'تکرار کلمه عبور'
     profile: 'پروفایل'
+    admin:
+      dashboard: 'داشبورد'
     register:
       text: 'عضویت'
       success: 'تبریک! به devex خوش آمدید.'
