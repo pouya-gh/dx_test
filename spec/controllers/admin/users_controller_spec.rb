@@ -4,7 +4,13 @@ describe Admin::UsersController do
   include SessionsHelper
   describe "GET #show" do
     before do
-      get :show
+      # signup the user
+      @user = create(:user, id: 2)
+
+      # sign in the user
+      sign_in @user
+
+      get :show, id: 2
     end
 
     it "renders show template" do
@@ -12,14 +18,7 @@ describe Admin::UsersController do
     end
 
     it "create an admin instance of the User class" do
-      # signup the user
-      user = create(:user, id: 2)
-
-      # sign in the user
-      post :create, session: { email: user.email, password: user.password }
-
-      get :show, id: 2
-      expect(assigns(:user)).to eq user
+      expect(assigns(:user)).to eq @user
     end
   end
 end
