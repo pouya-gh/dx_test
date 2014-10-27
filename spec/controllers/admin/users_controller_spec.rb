@@ -25,7 +25,7 @@ describe Admin::UsersController do
       it "can only view its own profile" do
         other_user = create(:user, id: 1, email: 'other_user@test.com')
         get :show, id: 1
-        expect(response).to redirect_to @user
+        expect(response).to redirect_to [:admin, @user]
       end
     end
 

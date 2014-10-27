@@ -7,7 +7,7 @@ module Admin
       begin
         authorize @user
       rescue Pundit::NotAuthorizedError
-        redirect_to current_user       
+        redirect_to [:admin, current_user]
       end
     end
 
