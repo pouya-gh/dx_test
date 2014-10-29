@@ -25,6 +25,21 @@ describe UsersController do
       it "redirects the user to its profile page" do
         expect(response).to render_template(:show)
       end
+
+      context 'get another user profile' do
+        before do 
+          @other_user = create(:user, email: 'test2@test.com')
+          get :show, id: @other_user.id
+        end
+        
+        it "redirects to current user profile page" do
+          expect(response).to redirect_to @user
+        end
+
+        it "adds a proper flash message" do
+          expect(flash[:warning]).to eql I18n.translate('authorization.errors.profile_page')
+        end
+      end
     end
 
     context 'not signed in' do
