@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
   after_save :regenerate_auth_token
+  
+  has_many :post
+
   has_secure_password
   EMAIL_REGEX = /.+\@.+\..+/
   validates :password, length: { minimum: 4, maximum: 30 }

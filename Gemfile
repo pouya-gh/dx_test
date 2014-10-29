@@ -62,6 +62,9 @@ group :test, :development do
   gem "better_errors", "~> 1.1.0"
 
   gem "terminal-notifier-guard", "~> 1.5.3"
+
+  # for testing rails associations
+  gem 'shoulda-matchers', require: false
 end
 
 # Use ActiveModel has_secure_password

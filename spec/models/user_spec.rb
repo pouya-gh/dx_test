@@ -66,4 +66,8 @@ describe User do
       expect(user_with_same_email).to have(1).errors_on(:email)
     end
   end
+
+  it "has many posts" do
+    expect(user).to have_many :post
+  end
 end

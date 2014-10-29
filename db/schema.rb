@@ -11,7 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141027082847) do
+ActiveRecord::Schema.define(version: 20141029151039) do
+
+  create_table "admins", force: true do |t|
+    t.string "email"
+    t.string "password_digest"
+  end
+
+  add_index "admins", ["email"], name: "index_admins_on_email"
+
+  create_table "posts", force: true do |t|
+    t.string   "digest"
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
+
+  add_index "posts", ["user_id"], name: "index_posts_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email"
