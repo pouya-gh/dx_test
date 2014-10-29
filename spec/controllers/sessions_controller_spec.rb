@@ -25,6 +25,14 @@ describe SessionsController do
     it "sets auth_token cookie" do
       expect(response.cookies['auth_token']).to eql @user.auth_token
     end
+
+    context 'admin user' do
+      it "redirect the user to it's admin dashboard" do
+        @user = create(:admin)
+        post :create, session: attributes_for(:admin).slice(:email, :password)
+        expect(response).to redirect_to [:admin, @user]
+      end
+    end
   end
 
   describe "POST #destroy" do

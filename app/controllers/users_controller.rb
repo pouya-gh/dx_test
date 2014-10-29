@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_filter :check_signed_in, except: [:new, :create]
+
   def new
     @user = User.new
   end
@@ -22,11 +24,7 @@ class UsersController < ApplicationController
       authorize @user
     rescue Pundit::NotAuthorizedError
       flash[:warning] = t('authorization.errors.profile_page')
-      if signed_in?
-        redirect_to current_user
-      else
-        redirect_to root_path
-      end
+      redirect_to current_user
     end
   end
 
@@ -34,5 +32,12 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:email, :password, :password_confirmation)
+  end
+
+  def check_signed_in
+    unless signed_in?
+      flash[:warning] = t('authorization.errors.signin')
+      redirect_to login_path(redirect_url: request.original_url)
+    end
   end
 end
