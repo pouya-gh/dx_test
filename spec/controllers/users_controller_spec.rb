@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe UsersController do
+  include SessionsHelper
   describe "GET #new" do
     it "assigns a new user to @user" do
       get :new
@@ -10,6 +11,31 @@ describe UsersController do
     it "renders the :new template" do
       get :new
       expect(response).to render_template(:new)
+    end
+  end
+
+  describe "GET #show" do
+    context 'signed in' do
+      before do
+        @user = create(:user)
+        sign_in @user
+        get :show, id: @user.id
+      end
+
+      it "redirects the user to its profile page" do
+        expect(response).to render_template(:show)
+      end
+    end
+
+    context 'not signed in' do
+      before do
+        @user = create(:user)
+        get :show, id: @user.id
+      end
+
+      it "redirects the user to login path" do
+        expect(response).to redirect_to login_path(redirect_url: request.original_url)
+      end
     end
   end
 
