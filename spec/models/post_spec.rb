@@ -14,4 +14,8 @@ describe Post do
   it "responds to title" do
     expect(post).to respond_to :title
   end
+
+  it "belongs to a user" do
+    expect(post).to belong_to :user
+  end
 end
