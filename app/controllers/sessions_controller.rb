@@ -7,7 +7,9 @@ class SessionsController < ApplicationController
     @user = User.find_by(email: session_params[:email])
     if @user && @user.authenticate(session_params[:password])
       sign_in @user
-      if @user.admin?
+      if params[:redirect_url]
+        redirect_to params[:redirect_url]
+      elsif @user.admin?
         redirect_to [:admin, @user]
       else
         redirect_to @user
