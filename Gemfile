@@ -27,6 +27,9 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+# Add bootstrap rtl less files
+gem 'bootstrap_farsi', '~> 3.2'
+
 # Generate Bootstrap Forms
 gem 'bootstrap_form'
 
