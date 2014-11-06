@@ -16,6 +16,13 @@ fa:
       text: 'ورود'
     logout:
       text: 'خروج'
+  post:
+    title: 'عنوان'
+    digest: 'چکیده'
+    create:
+      text: 'ایجاد پست'
+      success: 'پست با موفیت اینجاد شد.'
+      failure: 'خطایی در اینجاد پست رخ داده است.'
   activerecord:
     errors:
       models:
