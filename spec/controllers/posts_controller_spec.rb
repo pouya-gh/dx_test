@@ -30,6 +30,10 @@ describe PostsController do
         it "should be redirected to user profile" do
           expect(response).to redirect_to(current_user)
         end
+
+        it "renders authorization flash message" do
+          expect(flash[:warning]).to eql I18n.translate('authorization.errors.new_post')
+        end
       end
     end
 
@@ -40,6 +44,10 @@ describe PostsController do
 
       it "redirects the user to login path" do
         expect(response).to redirect_to login_path(redirect_url: request.original_url)
+      end
+
+      it "renders not signed in flash message" do
+        expect(flash[:warning]).to eql I18n.translate('authorization.errors.signin')
       end
     end
   end
