@@ -22,7 +22,7 @@ describe PostsController do
 
       context 'not admin' do
         before do
-          user = create(:admin)
+          user = create(:user)
           sign_in user
           get :new
         end

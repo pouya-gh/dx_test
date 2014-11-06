@@ -3,6 +3,12 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new 
+    begin
+      authorize @post
+    rescue Pundit::NotAuthorizedError
+      flash[:warning] = t('authorization.errors.new_post')
+      redirect_to current_user
+    end
   end
 
   private
