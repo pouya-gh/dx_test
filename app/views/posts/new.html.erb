@@ -1,5 +1,1 @@
-<%= bootstrap_form_for(@post) do |f| %>
-  <%= f.text_field :title, label: t('post.title') %>
-  <%= f.text_area :digest, label: t('post.digest') %>
-  <%= f.submit t('post.create.text') %>
-<% end %>
+<%= render 'form', form_type: 'create' %>
