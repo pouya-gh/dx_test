@@ -23,6 +23,10 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit
+    
+  end
+
   private
 
   def check_signed_in
