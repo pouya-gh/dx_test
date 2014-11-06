@@ -5,6 +5,7 @@ require_relative 'macros/authentication_feature_macro'
 feature 'managing posts' do
   include ManagingPostsStepsMacro
   include AuthenticationFeatureMacro
+  include ApplicationHelper
 
   scenario 'writing posts' do
     given_i_am_a_admin_user
