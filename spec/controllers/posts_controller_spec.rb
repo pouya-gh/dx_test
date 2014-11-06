@@ -55,11 +55,15 @@ describe PostsController do
   describe "POST #create" do
     before do
       sign_in create(:admin)
-      post :create, attributes_for(:post)
+      post :create, post: attributes_for(:post)
     end
 
     it "increase current user posts by 1" do
-      expect(response).to change { current_user.posts }.by 1
+      expect{
+        post :create, post: attributes_for(:post)
+      }.to change {
+        current_user.posts.count
+      }.by 1
     end
 
     it "redirects user to its dashboard" do
