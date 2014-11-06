@@ -51,4 +51,23 @@ describe PostsController do
       end
     end
   end
+
+  describe "POST #create" do
+    before do
+      sign_in create(:admin)
+      post :create, attributes_for(:post)
+    end
+
+    it "increase current user posts by 1" do
+      expect(response).to change { current_user.posts }.by 1
+    end
+
+    it "redirects user to its dashboard" do
+      expect(response).to redirect_to admin_user_path(current_user)
+    end
+
+    it "renders successful created flash" do
+      expect(flash[:success]).to eql I18n.translate('post.create.success')
+    end
+  end
 end
