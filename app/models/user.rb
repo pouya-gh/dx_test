@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   after_save :regenerate_auth_token
   
-  has_many :post
+  has_many :posts
 
   has_secure_password
   EMAIL_REGEX = /.+\@.+\..+/
