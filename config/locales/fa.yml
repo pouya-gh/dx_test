@@ -27,6 +27,8 @@ fa:
       text: 'ویرایش پست'
       success: 'پست با موفقیت ویرایش شد.'
     delete:
+      text: 'حذف'
+      confirmation: 'آیا از حذف این پست اطمینان دارید؟'
       success: 'پست با موفقیت حذف گردید.'
   activerecord:
     errors:
