@@ -68,6 +68,6 @@ describe User do
   end
 
   it "has many posts" do
-    expect(user).to have_many :post
+    expect(user).to have_many :posts
   end
 end
