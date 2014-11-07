@@ -28,6 +28,23 @@ module ManagingPostsStepsMacro
     expect(page).to have_content(I18n.translate('post.edit.success'))
   end
 
+  # deleting posts
+  def and_i_am_in_my_dashboard_page
+    visit admin_user_path(@user)
+  end
+
+  def when_i_click_on_a_post_delete_link
+    
+  end
+
+  def and_see_no_more_that_post
+    
+  end
+
+  def and_a_proper_deleted_message
+    
+  end
+
   # shared
   def given_i_am_a_admin_user
     @user = create(:admin)
