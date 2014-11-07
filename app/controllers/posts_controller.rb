@@ -41,6 +41,12 @@ class PostsController < ApplicationController
     redirect_to admin_user_path(current_user)
   end
 
+  def destroy
+    Post.find(params[:id]).destroy!
+    flash[:success] = t('post.delete.success')
+    redirect_to admin_user_path(current_user)
+  end
+
   private
 
   def check_signed_in
