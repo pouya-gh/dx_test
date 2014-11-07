@@ -26,6 +26,8 @@ fa:
     edit:
       text: 'ویرایش پست'
       success: 'پست با موفقیت ویرایش شد.'
+    delete:
+      success: 'پست با موفقیت حذف گردید.'
   activerecord:
     errors:
       models:
