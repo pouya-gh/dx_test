@@ -122,5 +122,21 @@ describe PostsController do
         expect(flash[:warning]).to eql I18n.translate('authorization.errors.signin')
       end
     end
+
+    describe "PUT #update" do
+      before do
+        sign_in create(:user)
+        @post = create(:post)
+        put :update, id: @post.id, post: attributes_for(:post, title: 'test2')
+      end
+
+      it "assigns post variable from params" do
+        expect(assigns(:post)).to eql @post
+      end
+
+      it "updates the post in the database" do
+        expect(Post.first.title).not_to eql @post.title
+      end
+    end
   end
 end
