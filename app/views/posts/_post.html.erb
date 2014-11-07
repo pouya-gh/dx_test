@@ -1,0 +1,14 @@
+<article itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    <h1 itemprop="about"><%= post.title %></h1>
+  </header>
+  <section>
+    <p itemprop="articleBody"><%= post.digest %></p>
+  </section>
+  <nav>
+    <%= link_to t('user.delete.text'), post_path(post), method: :delete %>
+  </nav>
+  <footer>
+    <!-- created date, tags, etc... -->
+  </footer>
+</article>
