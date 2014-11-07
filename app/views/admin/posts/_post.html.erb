@@ -6,7 +6,7 @@
     <p itemprop="articleBody"><%= post.digest %></p>
   </section>
   <nav>
-    <%= link_to t('post.delete.text'), post_path(post), method: :delete, confirm: t('post.delete.confirmation') %>
+    <%= link_to t('post.delete.text'), post_path(post), method: :delete, data: { confirm: t('post.delete.confirmation') } %>
   </nav>
   <footer>
     <!-- created date, tags, etc... -->
