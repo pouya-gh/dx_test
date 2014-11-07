@@ -137,6 +137,14 @@ describe PostsController do
       it "updates the post in the database" do
         expect(Post.first.title).not_to eql @post.title
       end
+
+      it "redirects to admin dashboard" do
+        expect(response).to redirect_to admin_user_path(current_user)
+      end
+
+      it "renders post edit success flash message" do
+        expect(flash[:success]).to eql I18n.translate('post.edit.success')
+      end
     end
   end
 end
