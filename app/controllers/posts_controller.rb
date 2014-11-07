@@ -6,7 +6,7 @@ class PostsController < ApplicationController
     begin
       authorize @post
     rescue Pundit::NotAuthorizedError
-      flash[:warning] = t('authorization.errors.new_post')
+      flash[:warning] = t('authorization.errors.post.new')
       redirect_to current_user
     end
   end
@@ -24,7 +24,7 @@ class PostsController < ApplicationController
   end
 
   def edit
-    
+    @post = Post.find(params[:id])
   end
 
   private

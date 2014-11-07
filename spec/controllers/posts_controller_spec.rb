@@ -32,7 +32,7 @@ describe PostsController do
         end
 
         it "renders authorization flash message" do
-          expect(flash[:warning]).to eql I18n.translate('authorization.errors.new_post')
+          expect(flash[:warning]).to eql I18n.translate('authorization.errors.post.new')
         end
       end
     end
@@ -72,6 +72,55 @@ describe PostsController do
 
     it "renders successful created flash" do
       expect(flash[:success]).to eql I18n.translate('post.create.success')
+    end
+  end
+
+  describe "GET #edit" do
+    context 'admin user' do
+      before do
+        sign_in create(:user)
+        @post = create(:post)
+        get :edit, id: @post.id
+      end
+
+      it "renders edit template" do
+        expect(response).to render_template(:edit)
+      end
+
+      it "assigns @post variable with id param" do
+        expect(assigns(:post)).to eql @post
+      end
+    end
+
+    context 'normal user' do
+      before do
+        sign_in create(:user)
+        @post = create(:post)
+        get :edit, id: @post.id
+      end
+
+      it "redirects to it's profile page" do
+        expect(response).to redirect_to current_user
+      end
+
+      it "renders authorization post edit flash message" do
+        expect(flash[:warning]).to eql I18n.translate('authorization.errors.post.edit')
+      end
+    end
+
+    context 'guest user' do
+      before do
+        @post = create(:post)
+        get :edit, id: @post.id
+      end
+
+      it "redirects to root path" do
+        expect(response).to redirect_to login_path(redirect_url: request.original_url)
+      end
+
+      it "renders signin authorization flash message" do
+        expect(flash[:warning]).to eql I18n.translate('authorization.errors.signin')
+      end
     end
   end
 end
