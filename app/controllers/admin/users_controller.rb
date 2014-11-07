@@ -4,6 +4,7 @@ module Admin
 
     def show
       @user = User.find(params[:id])
+      @posts = current_user.posts
       begin
         authorize @user
       rescue Pundit::NotAuthorizedError
