@@ -29,20 +29,25 @@ module ManagingPostsStepsMacro
   end
 
   # deleting posts
+  def and_have_some_posts
+    @post = @user.posts.new attributes_for(:post)
+    @post.save!
+  end
+
   def and_i_am_in_my_dashboard_page
     visit admin_user_path(@user)
   end
 
   def when_i_click_on_a_post_delete_link
-    
+    click_link I18n.translate('post.delete.text')
   end
 
   def and_see_no_more_that_post
-    
+    expect(page).to_not have_content(@post.title)
   end
 
   def and_a_proper_deleted_message
-    
+    expect(page).to have_content(I18n.translate('post.delete.success'))
   end
 
   # shared
