@@ -23,6 +23,8 @@ fa:
       text: 'ایجاد پست'
       success: 'پست با موفیت اینجاد شد.'
       failure: 'خطایی در اینجاد پست رخ داده است.'
+    edit:
+      text: 'ویرایش پست'
   activerecord:
     errors:
       models:
