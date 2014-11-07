@@ -155,7 +155,8 @@ describe PostsController do
       end
 
       it "removes a post from database" do
-        expect(response).to change(Post, :count).by 1
+        @post = create(:post)
+        expect { delete :destroy, id: @post.id }.to change(Post, :count).by -1
       end
 
       it "redirects to admin dashboard" do
