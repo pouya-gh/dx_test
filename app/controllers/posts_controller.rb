@@ -25,6 +25,12 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    begin
+      authorize @post
+    rescue Pundit::NotAuthorizedError
+      flash[:warning] = t('authorization.errors.post.edit')
+      redirect_to current_user
+    end
   end
 
   private

@@ -6,4 +6,8 @@ class PostPolicy
   def new?
     @cuser.admin?
   end
+
+  def edit?
+    @cuser.admin?
+  end
 end

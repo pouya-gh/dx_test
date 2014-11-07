@@ -78,7 +78,7 @@ describe PostsController do
   describe "GET #edit" do
     context 'admin user' do
       before do
-        sign_in create(:user)
+        sign_in create(:admin)
         @post = create(:post)
         get :edit, id: @post.id
       end
