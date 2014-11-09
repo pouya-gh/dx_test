@@ -82,8 +82,11 @@ describe Admin::PostsController do
       end
 
       context 'without title' do
-        it "renders new template without title" do
+        before do
           post :create, post: attributes_for(:post, title: nil)
+        end
+
+        it "renders new template without title" do
           expect(response).to render_template(:new)
         end
 
@@ -93,8 +96,11 @@ describe Admin::PostsController do
       end
 
       context 'without digest' do
-        it "renders new template without digest" do
+        before do
           post :create, post: attributes_for(:post, digest: nil)
+        end
+
+        it "renders new template without digest" do
           expect(response).to render_template(:new)
         end
 
