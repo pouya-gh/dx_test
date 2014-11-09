@@ -53,25 +53,55 @@ describe Admin::PostsController do
   end
 
   describe "POST #create" do
-    before do
-      sign_in create(:admin)
-      post :create, post: attributes_for(:post)
-    end
-
-    it "increase current user posts by 1" do
-      expect{
+    context 'with valid data' do
+      before do
+        sign_in create(:admin)
         post :create, post: attributes_for(:post)
-      }.to change {
-        current_user.posts.count
-      }.by 1
+      end
+
+      it "increase current user posts by 1" do
+        expect{
+          post :create, post: attributes_for(:post)
+        }.to change {
+          current_user.posts.count
+        }.by 1
+      end
+
+      it "redirects user to its dashboard" do
+        expect(response).to redirect_to admin_user_path(current_user)
+      end
+
+      it "renders successful created flash" do
+        expect(flash[:success]).to eql I18n.translate('post.create.success')
+      end
     end
 
-    it "redirects user to its dashboard" do
-      expect(response).to redirect_to admin_user_path(current_user)
-    end
+    context 'with invalid data' do
+      before do
+        sign_in create(:admin)
+      end
 
-    it "renders successful created flash" do
-      expect(flash[:success]).to eql I18n.translate('post.create.success')
+      context 'without title' do
+        it "renders new template without title" do
+          post :create, post: attributes_for(:post, title: nil)
+          expect(response).to render_template(:new)
+        end
+
+        it "renders post not valid flash message" do
+          expect(flash[:danger]).to eql I18n.translate('post.create.failure')
+        end
+      end
+
+      context 'without digest' do
+        it "renders new template without digest" do
+          post :create, post: attributes_for(:post, digest: nil)
+          expect(response).to render_template(:new)
+        end
+
+        it "renders post not valid flash message" do
+          expect(flash[:danger]).to eql I18n.translate('post.create.failure')
+        end
+      end
     end
   end
 
