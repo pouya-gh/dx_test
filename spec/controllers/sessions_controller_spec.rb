@@ -1,10 +1,51 @@
 require 'spec_helper'
 
 describe SessionsController do
+  include SessionsHelper
+
   describe "GET #new" do
-    it "renders new template" do
-      get :new
-      expect(response).to render_template(:new)
+    context 'not signed in' do
+      before do
+        get :new
+      end
+
+      it "renders new template" do
+        expect(response).to render_template(:new)
+      end
+    end
+
+    context 'signed in' do
+      context 'admin user' do
+        before do
+          @user = create(:admin)
+          sign_in @user
+          get :new
+        end
+
+        it "redirects user to his profile page" do
+          expect(response).to redirect_to(admin_user_path(@user))
+        end
+
+        it "renders already signed in flash message" do
+          expect(flash[:warning]).to eql I18n.translate('user.login.already_loged_in')
+        end
+      end
+
+      context 'normal user' do
+        before do
+          @user = create(:user)
+          sign_in @user
+          get :new
+        end
+
+        it "redirects user to his profile page" do
+          expect(response).to redirect_to(user_path(@user))
+        end
+
+        it "renders already signed in flash message" do
+          expect(flash[:warning]).to eql I18n.translate('user.login.already_loged_in')
+        end
+      end
     end
   end
 
