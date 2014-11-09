@@ -37,9 +37,14 @@ module Admin
     def update
       @post = Post.find(params[:id])
       @post.update_attributes(post_params)
-      @post.save!
-      flash[:success] = t('post.edit.success')
-      redirect_to admin_user_path(current_user)
+      begin
+        @post.save!
+        flash[:success] = t('post.edit.success')
+        redirect_to admin_user_path(current_user)
+      rescue
+        render :edit
+        flash.now[:danger] = t('post.create.failure')
+      end
     end
 
     def destroy
