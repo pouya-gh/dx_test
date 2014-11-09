@@ -1,1 +1,21 @@
 @import "twitter/bootstrap/bootstrap";
+
+@navbar-height: 40px;
+@navbar-border-radius: 0;
+@navbar-default-bg: #3B5998;
+@navbar-default-color: #FFF;
+@navbar-default-link-color: #FFF;
+@navbar-default-link-hover-color: #FFF;
+@navbar-default-link-active-color: #FFF;
+@navbar-default-brand-color: #FFF;
+@icon-font-path: "twitter/bootstrap/";
+@icon-font-name: "glyphicons-halflings-regular";
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: asset-url('@{icon-font-path}@{icon-font-name}.eot');
+  src: asset-url('@{icon-font-path}@{icon-font-name}.eot?#iefix') format('embedded-opentype'),
+       asset-url('@{icon-font-path}@{icon-font-name}.woff') format('woff'),
+       asset-url('@{icon-font-path}@{icon-font-name}.ttf') format('truetype'),
+       asset-url('@{icon-font-path}@{icon-font-name}.svg#@{icon-font-svg-id}') format('svg');
+}
