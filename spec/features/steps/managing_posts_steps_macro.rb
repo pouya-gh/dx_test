@@ -1,7 +1,7 @@
 module ManagingPostsStepsMacro
   # writing posts
   def when_i_go_to_new_post_path
-    visit new_post_path
+    visit new_admin_post_path
   end
 
   def and_fill_the_form_with_a_valid_post
@@ -16,7 +16,7 @@ module ManagingPostsStepsMacro
   # editing posts
   def when_i_go_to_edit_post_path
     @post = create(:post)
-    visit edit_post_path(@post)
+    visit edit_admin_post_path(@post)
   end
 
   def and_change_post_properties_in_the_edit_form
