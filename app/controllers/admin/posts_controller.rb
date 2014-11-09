@@ -19,8 +19,8 @@ module Admin
         flash[:success] = t('post.create.success')
         redirect_to admin_user_path(current_user)
       rescue
-        render :new
         flash.now[:danger] = t('post.create.failure')
+        render :new
       end
     end
 
