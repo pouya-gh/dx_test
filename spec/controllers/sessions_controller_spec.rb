@@ -15,18 +15,36 @@ describe SessionsController do
     end
 
     context 'signed in' do
-      before do
-        @user = create(:user)
-        sign_in @user
-        get :new
+      context 'admin user' do
+        before do
+          @user = create(:admin)
+          sign_in @user
+          get :new
+        end
+
+        it "redirects user to his profile page" do
+          expect(response).to redirect_to(admin_user_path(@user))
+        end
+
+        it "renders already signed in flash message" do
+          expect(flash[:warning]).to eql I18n.translate('user.login.already_loged_in')
+        end
       end
 
-      it "redirects user to his profile page" do
-        expect(response).to redirect_to(user_path(@user))
-      end
+      context 'normal user' do
+        before do
+          @user = create(:user)
+          sign_in @user
+          get :new
+        end
 
-      it "renders already signed in flash message" do
-        expect(flash[:warning]).to eql I18n.translate('user.login.already_loged_in')
+        it "redirects user to his profile page" do
+          expect(response).to redirect_to(user_path(@user))
+        end
+
+        it "renders already signed in flash message" do
+          expect(flash[:warning]).to eql I18n.translate('user.login.already_loged_in')
+        end
       end
     end
   end

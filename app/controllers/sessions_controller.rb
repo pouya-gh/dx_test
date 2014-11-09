@@ -2,7 +2,11 @@ class SessionsController < ApplicationController
   def new
     if signed_in?
       flash[:warning] = t('user.login.already_loged_in')
-      redirect_to current_user
+      if current_user.admin?
+        redirect_to admin_user_path(current_user)
+      else
+        redirect_to current_user
+      end
     end
   end
 
