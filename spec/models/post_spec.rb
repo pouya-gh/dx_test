@@ -18,4 +18,12 @@ describe Post do
   it "belongs to a user" do
     expect(post).to belong_to :user
   end
+
+  it "is invalid without a title" do
+    expect(build(:post, title: nil)).to be_invalid
+  end
+
+  it "is invalid without a digest" do
+    expect(build(:post, digest: nil)).to be_invalid
+  end
 end

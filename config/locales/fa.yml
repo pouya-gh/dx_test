@@ -46,6 +46,12 @@ fa:
             password_confirmation:
               confirmation: 'کلمه عبور و تکرار آن باید یکی باشند.'
               blank: 'تکرار کلمه عبور نمی تواند خالی باشد.'
+        post:
+          attributes:
+            title:
+              blank: 'عنوان نمی تواند خالی باشد.'
+            digest:
+              blank: 'چکیده نمی تواند خالی باشد.'
   static_pages:
     home:
       title: 'خانه'
