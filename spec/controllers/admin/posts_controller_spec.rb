@@ -122,50 +122,50 @@ describe Admin::PostsController do
         expect(flash[:warning]).to eql I18n.translate('authorization.errors.signin')
       end
     end
+  end
 
-    describe "PUT #update" do
-      before do
-        sign_in create(:user)
-        @post = create(:post)
-        put :update, id: @post.id, post: attributes_for(:post, title: 'test2')
-      end
-
-      it "assigns post variable from params" do
-        expect(assigns(:post)).to eql @post
-      end
-
-      it "updates the post in the database" do
-        expect(Post.first.title).not_to eql @post.title
-      end
-
-      it "redirects to admin dashboard" do
-        expect(response).to redirect_to admin_user_path(current_user)
-      end
-
-      it "renders post edit success flash message" do
-        expect(flash[:success]).to eql I18n.translate('post.edit.success')
-      end
+  describe "PUT #update" do
+    before do
+      sign_in create(:user)
+      @post = create(:post)
+      put :update, id: @post.id, post: attributes_for(:post, title: 'test2')
     end
 
-    describe "DELETE #destroy" do
-      before do
-        sign_in create(:admin)
-        @post = create(:post)
-        delete :destroy, id: @post.id
-      end
+    it "assigns post variable from params" do
+      expect(assigns(:post)).to eql @post
+    end
 
-      it "removes a post from database" do
-        @post = create(:post)
-        expect { delete :destroy, id: @post.id }.to change(Post, :count).by -1
-      end
+    it "updates the post in the database" do
+      expect(Post.first.title).not_to eql @post.title
+    end
 
-      it "redirects to admin dashboard" do
-        expect(response).to redirect_to admin_user_path(current_user)
-      end
+    it "redirects to admin dashboard" do
+      expect(response).to redirect_to admin_user_path(current_user)
+    end
 
-      it "renders post delete success message" do
-        expect(flash[:success]).to eql I18n.translate('post.delete.success')
-      end
+    it "renders post edit success flash message" do
+      expect(flash[:success]).to eql I18n.translate('post.edit.success')
+    end
+  end
+
+  describe "DELETE #destroy" do
+    before do
+      sign_in create(:admin)
+      @post = create(:post)
+      delete :destroy, id: @post.id
+    end
+
+    it "removes a post from database" do
+      @post = create(:post)
+      expect { delete :destroy, id: @post.id }.to change(Post, :count).by -1
+    end
+
+    it "redirects to admin dashboard" do
+      expect(response).to redirect_to admin_user_path(current_user)
+    end
+
+    it "renders post delete success message" do
+      expect(flash[:success]).to eql I18n.translate('post.delete.success')
     end
   end
 end
