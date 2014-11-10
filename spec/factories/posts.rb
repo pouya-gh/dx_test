@@ -7,5 +7,6 @@ FactoryGirl.define do
            vitae quibusdam voluptas incidunt maiores autem unde tenetur maxime,
            commodi, mollitia atque error officia asperiores eligendi deserunt
            repellat ex veniam quaerat."
+    tags ['ruby', 'rails', 'javascript']
   end
 end

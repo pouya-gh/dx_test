@@ -20,7 +20,7 @@ describe Post do
   end
 
   it "has an empty array of tags by default" do
-    expect(post.tags).to eql []
+    expect(Post.new.tags).to eql []
   end
 
   it "belongs to a user" do
