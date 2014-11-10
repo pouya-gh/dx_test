@@ -19,6 +19,10 @@ describe Post do
     expect(post).to respond_to :tags
   end
 
+  it "responds to find_by_tag" do
+    expect(post).to respond_to :find_by_tag
+  end
+
   it "has an empty array of tags by default" do
     expect(Post.new.tags).to eql []
   end
