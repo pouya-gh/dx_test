@@ -15,6 +15,14 @@ describe Post do
     expect(post).to respond_to :title
   end
 
+  it "responds to tags" do
+    expect(post).to respond_to :tags
+  end
+
+  it "has an empty array of tags by default" do
+    expect(post.tags).to eql []
+  end
+
   it "belongs to a user" do
     expect(post).to belong_to :user
   end
