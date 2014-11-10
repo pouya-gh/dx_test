@@ -23,6 +23,11 @@ describe Post do
     expect(Post).to respond_to :find_by_tag
   end
 
+  it "returns array of posts with find_by_tag" do
+    post = create(:post)
+    expect(Post.find_by_tag(post.tags.first)).to include post
+  end
+
   it "has an empty array of tags by default" do
     expect(Post.new.tags).to eql []
   end
