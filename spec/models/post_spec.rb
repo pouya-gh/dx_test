@@ -20,7 +20,7 @@ describe Post do
   end
 
   it "responds to find_by_tag" do
-    expect(post).to respond_to :find_by_tag
+    expect(Post).to respond_to :find_by_tag
   end
 
   it "has an empty array of tags by default" do
