@@ -20,6 +20,7 @@ fa:
   post:
     title: 'عنوان'
     digest: 'چکیده'
+    tags: 'برچسب ها'
     create:
       text: 'ایجاد پست'
       success: 'پست با موفیت اینجاد شد.'
