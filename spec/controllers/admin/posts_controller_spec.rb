@@ -74,6 +74,10 @@ describe Admin::PostsController do
       it "renders successful created flash" do
         expect(flash[:success]).to eql I18n.translate('post.create.success')
       end
+
+      it "saves tags value as array in the database" do
+        expect(Post.first.tags).to eql build(:post).tags
+      end
     end
 
     context 'with invalid data' do
