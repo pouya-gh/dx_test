@@ -8,7 +8,7 @@ Devex2::Application.routes.draw do
 
   namespace :admin do
     resources :users, only: [:show]
-    resources :posts, except: [:index]
+    resources :posts
   end
 
   root 'static_pages#home'
