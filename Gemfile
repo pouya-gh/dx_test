@@ -35,6 +35,9 @@ gem 'bootstrap_form'
 # Simple authorization
 gem 'pundit'
 
+# Manage configurations
+gem "figaro"
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

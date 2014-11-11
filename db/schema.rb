@@ -11,24 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141029151039) do
+ActiveRecord::Schema.define(version: 20141111150055) do
 
-  create_table "admins", force: true do |t|
-    t.string "email"
-    t.string "password_digest"
-  end
-
-  add_index "admins", ["email"], name: "index_admins_on_email"
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "posts", force: true do |t|
-    t.string   "digest"
+    t.text     "digest"
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "tags",       default: [], array: true
   end
 
-  add_index "posts", ["user_id"], name: "index_posts_on_user_id"
+  add_index "posts", ["tags"], name: "index_posts_on_tags", using: :gin
+  add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email"
@@ -39,8 +37,8 @@ ActiveRecord::Schema.define(version: 20141029151039) do
     t.boolean  "admin",           default: false
   end
 
-  add_index "users", ["admin"], name: "index_users_on_admin"
-  add_index "users", ["auth_token"], name: "index_users_on_auth_token"
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["admin"], name: "index_users_on_admin", using: :btree
+  add_index "users", ["auth_token"], name: "index_users_on_auth_token", using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
 end

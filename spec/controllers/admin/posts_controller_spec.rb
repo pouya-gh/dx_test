@@ -56,7 +56,7 @@ describe Admin::PostsController do
     context 'with valid data' do
       before do
         sign_in create(:admin)
-        post :create, post: attributes_for(:post)
+        post :create, post: attributes_for(:post, tags: build(:post).tags.join(','))
       end
 
       it "increase current user posts by 1" do
@@ -73,6 +73,10 @@ describe Admin::PostsController do
 
       it "renders successful created flash" do
         expect(flash[:success]).to eql I18n.translate('post.create.success')
+      end
+
+      it "saves tags value as array in the database" do
+        expect(Post.last.tags).to eql build(:post).tags 
       end
     end
 
@@ -164,7 +168,7 @@ describe Admin::PostsController do
     before do
       sign_in create(:user)
       @post = create(:post)
-      put :update, id: @post.id, post: attributes_for(:post, title: 'test2')
+      put :update, id: @post.id, post: attributes_for(:post, title: 'test2', tags: build(:post).tags.join(','))
     end
 
     it "assigns post variable from params" do
