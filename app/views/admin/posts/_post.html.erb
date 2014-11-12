@@ -9,6 +9,8 @@
     <%= link_to t('post.delete.text'), admin_post_path(post), method: :delete, 
     data: { confirm: t('post.delete.confirmation') },
     class: 'btn btn-danger btn-xs' %>
+    <%= link_to t('post.edit.text'), edit_admin_post_path(post),
+    class: 'btn btn-primary btn-xs' %>
   </nav>
   <footer>
     <!-- created date, tags, etc... -->
