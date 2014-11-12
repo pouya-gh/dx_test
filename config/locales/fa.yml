@@ -32,6 +32,7 @@ fa:
       text: 'حذف'
       confirmation: 'آیا از حذف این پست اطمینان دارید؟'
       success: 'پست با موفقیت حذف گردید.'
+    index: 'پست ها'
   activerecord:
     errors:
       models:
