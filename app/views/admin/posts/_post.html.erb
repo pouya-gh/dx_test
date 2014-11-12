@@ -6,13 +6,18 @@
     <p itemprop="articleBody"><%= post.digest %></p>
   </section>
   <nav>
+    <ul class="post-tags">
+    <% post.tags.each do |tag| %>
+      <li><%= link_to tag, '#' %></li>
+    <% end %>
+    </ul>
+  </nav>
+  <div class="clearfix"></div>
+  <nav class="post-control-links">
     <%= link_to t('post.delete.text'), admin_post_path(post), method: :delete, 
     data: { confirm: t('post.delete.confirmation') },
     class: 'btn btn-danger btn-xs' %>
     <%= link_to t('post.edit.text'), edit_admin_post_path(post),
     class: 'btn btn-primary btn-xs' %>
   </nav>
-  <footer>
-    <!-- created date, tags, etc... -->
-  </footer>
 </article>
