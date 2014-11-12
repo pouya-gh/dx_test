@@ -3,18 +3,21 @@ require 'spec_helper'
 describe Admin::PostsController do
   include SessionsHelper
   describe "GET #index" do
-    before do
-      user = create(:admin)
-      sign_in user
-      get :index
-    end
+    context 'admin user' do
+      before do
+        user = create(:admin)
+        sign_in user
+        current_user.posts.create(attributes_for(:post))
+        get :index
+      end
 
-    it "assigns current user posts to @posts" do
-      expect(assigns(:posts)).to eql current_user.posts
-    end
+      it "assigns current user posts to @posts" do
+        assigns(:posts).should == current_user.posts
+      end
 
-    it "renders index template" do
-      expect(response).to render_template(:index)
+      it "renders index template" do
+        expect(response).to render_template(:index)
+      end
     end
   end
 

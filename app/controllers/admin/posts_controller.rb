@@ -2,6 +2,10 @@ module Admin
   class PostsController < ApplicationController
     before_filter :check_signed_in
 
+    def index
+      @posts = current_user.posts
+    end
+
     def new
       @post = Post.new 
       begin
