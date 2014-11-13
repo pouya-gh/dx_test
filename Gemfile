@@ -75,6 +75,9 @@ group :test, :development do
 
   # for testing rails associations
   gem 'shoulda-matchers', require: false
+
+  # for working with rails panel
+  gem 'meta_request'
 end
 
 # Use ActiveModel has_secure_password
