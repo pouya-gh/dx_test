@@ -68,6 +68,8 @@ group :test, :development do
 
   # improve rails errors page
   gem "better_errors", "~> 1.1.0"
+  # for local/instance variable inspection or showing REPL
+  gem "binding_of_caller"
 
   gem "terminal-notifier-guard", "~> 1.5.3"
 

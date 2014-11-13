@@ -1,14 +1,23 @@
 <article itemscope itemtype="http://schema.org/BlogPosting" class="post">
   <header>
     <h1 itemprop="about"><%= post.title %></h1>
+    <nav class="post-control-links">
+      <%= link_to t('post.delete.text'), admin_post_path(post), method: :delete, 
+      data: { confirm: t('post.delete.confirmation') },
+      class: 'btn btn-danger btn-xs' %>
+      <%= link_to t('post.edit.text'), edit_admin_post_path(post),
+      class: 'btn btn-primary btn-xs' %>
+    </nav>
   </header>
   <section>
     <p itemprop="articleBody"><%= post.digest %></p>
   </section>
   <nav>
-    <%= link_to t('post.delete.text'), admin_post_path(post), method: :delete, data: { confirm: t('post.delete.confirmation') } %>
+    <ul class="post-tags">
+    <% post.tags.each do |tag| %>
+      <li><%= link_to tag, '#' %></li>
+    <% end %>
+    </ul>
   </nav>
-  <footer>
-    <!-- created date, tags, etc... -->
-  </footer>
+  <div class="clearfix"></div>
 </article>
