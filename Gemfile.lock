@@ -32,6 +32,8 @@ GEM
     better_errors (1.1.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     bootstrap_farsi (3.2.0.1)
       less-rails
       rails (>= 3.2)
@@ -58,6 +60,7 @@ GEM
       execjs
     coffee-script-source (1.8.0)
     commonjs (0.2.7)
+    debug_inspector (0.0.2)
     diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.2.2)
@@ -213,6 +216,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt-ruby (~> 3.1.2)
   better_errors (~> 1.1.0)
+  binding_of_caller
   bootstrap_farsi (~> 3.2)
   bootstrap_form
   capybara (~> 2.2.1)
