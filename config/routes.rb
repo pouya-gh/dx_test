@@ -5,6 +5,7 @@ Devex2::Application.routes.draw do
   
   resources :users, only: [:new, :create, :show]
   resources :sessions, only: [:new, :create]
+  resources :posts, only: [:index]
 
   namespace :admin do
     resources :users, only: [:show]
