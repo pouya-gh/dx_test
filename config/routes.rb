@@ -1,5 +1,5 @@
 Devex2::Application.routes.draw do
-  get '/home', to: 'static_pages#home'
+  get '/home', to: 'posts#index'
   get '/login', to: 'sessions#new'
   get '/logout', to: 'sessions#destroy'
   
@@ -12,7 +12,7 @@ Devex2::Application.routes.draw do
     resources :posts
   end
 
-  root 'static_pages#home'
+  root 'posts#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
