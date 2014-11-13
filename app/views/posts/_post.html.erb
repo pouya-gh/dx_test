@@ -5,7 +5,12 @@
   <section>
     <p itemprop="articleBody"><%= post.digest %></p>
   </section>
-  <footer>
-    <!-- created date, tags, etc... -->
-  </footer>
+  <nav>
+    <ul class="post-tags">
+    <% post.tags.each do |tag| %>
+      <li><%= link_to tag, '#' %></li>
+    <% end %>
+    </ul>
+  </nav>
+  <div class="clearfix"></div>
 </article>
