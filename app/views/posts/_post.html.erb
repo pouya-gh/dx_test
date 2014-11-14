@@ -3,6 +3,7 @@
     <h1 itemprop="about"><%= post.title %></h1>
   </header>
   <section>
+    <%= image_tag post.image.medium.url, class: 'post-image', itemprop: 'thumbnailUrl', size: '200x125' %>
     <p itemprop="articleBody"><%= post.digest %></p>
   </section>
   <nav>
