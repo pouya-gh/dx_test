@@ -54,9 +54,6 @@ fa:
               blank: 'عنوان نمی تواند خالی باشد.'
             digest:
               blank: 'چکیده نمی تواند خالی باشد.'
-  static_pages:
-    home:
-      title: 'خانه'
   authorization:
     errors:
       profile_page: 'کاربر گرامی! شما تنها قارد به مشاهده پروفایل خود می باشید.'

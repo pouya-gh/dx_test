@@ -11,7 +11,7 @@ module LogoutStepsMacro
   end
 
   def then_i_should_be_redirected_to_home_page
-    expect(page).to have_title(full_title(I18n.translate('static_pages.home.title')))
+    expect(page).to have_title(full_title(I18n.translate('post.index')))
   end
 
   def and_see_login_link_in_the_navbar
