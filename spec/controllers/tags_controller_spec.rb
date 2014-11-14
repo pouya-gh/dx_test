@@ -3,6 +3,8 @@ require 'spec_helper'
 describe TagsController do
   describe "GET #index" do
     before do
+      create(:post, tags: ['test', 'test1', 'test2'])
+      create(:post, tags: ['test'])
       get :index, tag: 'test'
     end
 
@@ -11,7 +13,7 @@ describe TagsController do
     end
 
     it "assigns posts with the specified tag to @posts" do
-      expect(assigns(:posts)).to eql Post.find_by_tag(request.env['tag'])
+      assigns(:posts).should == Post.find_by_tag(request.query_parameters[:tag])
     end
   end
 end
