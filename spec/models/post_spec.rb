@@ -23,6 +23,10 @@ describe Post do
     expect(Post).to respond_to :find_by_tag
   end
 
+  it "responds to image" do
+    expect(post).to respond_to :image
+  end
+
   it "returns array of posts with find_by_tag" do
     post = create(:post)
     expect(Post.find_by_tag(post.tags.first)).to include post
