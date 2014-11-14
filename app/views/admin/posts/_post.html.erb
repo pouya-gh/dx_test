@@ -13,6 +13,7 @@
     <%= image_tag post.image.medium.url, class: 'post-image', itemprop: 'thumbnailUrl', size: '200x125' %>
     <p itemprop="articleBody"><%= post.digest %></p>
   </section>
+  <div class="clearfix"></div>
   <nav>
     <ul class="post-tags">
     <% post.tags.each do |tag| %>
