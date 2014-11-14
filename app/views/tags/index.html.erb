@@ -1,0 +1,8 @@
+<%= content_for(:title, full_title("tag: #{params[:tag]}")) %>
+<% @posts.each do |post| %>
+  <% if current_user && current_user.admin? %>
+    <%= render partial: 'admin/posts/post', locals: { post: post } %>
+  <% else %>
+    <%= render partial: 'posts/post', locals: { post: post } %>
+  <% end %>
+<% end %>
