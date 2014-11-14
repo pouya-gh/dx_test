@@ -42,7 +42,7 @@ gem "figaro"
 gem 'carrierwave', '~> 0.10'
 
 # working with imagemagick
-gem 'rmagick', '~> 2.13'
+gem 'rmagick', '~> 2.13', :require => 'RMagick'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
