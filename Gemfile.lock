@@ -164,6 +164,7 @@ GEM
     rdoc (4.1.2)
       json (~> 1.4)
     ref (1.0.5)
+    rmagick (2.13.3)
     rspec (2.14.1)
       rspec-core (~> 2.14.0)
       rspec-expectations (~> 2.14.0)
@@ -246,6 +247,7 @@ DEPENDENCIES
   pry-rails (~> 0.3.2)
   pundit
   rails (= 4.0.2)
+  rmagick (~> 2.13)
   rspec-rails (~> 2.14.1)
   sass-rails (~> 4.0.0)
   sdoc

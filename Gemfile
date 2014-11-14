@@ -41,6 +41,9 @@ gem "figaro"
 # mange file file attachments
 gem 'carrierwave', '~> 0.10'
 
+# working with imagemagick
+gem 'rmagick', '~> 2.13'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
