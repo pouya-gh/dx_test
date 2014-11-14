@@ -15,6 +15,7 @@ fa:
     login:
       text: 'ورود'
       already_loged_in: 'کاربر گرامی، شما در حال حاضر وارد حساب خود شده اید.'
+      fail: 'اطلاعات وارد شده صحیح نیست. لطفا دوباره تلاش کنید.'
     logout:
       text: 'خروج'
   post:
@@ -24,8 +25,8 @@ fa:
     image: 'آپلود تصویر'
     create:
       text: 'ایجاد پست'
-      success: 'پست با موفیت اینجاد شد.'
-      failure: 'خطایی در اینجاد پست رخ داده است.'
+      success: 'پست با موفقیت ایجاد شد.'
+      failure: 'خطایی در ایجاد پست رخ داده است.'
     edit:
       text: 'ویرایش پست'
       success: 'پست با موفقیت ویرایش شد.'
@@ -62,3 +63,10 @@ fa:
       post:
         new: 'کاربر گرامی شما قارد به ایجاد پست نیستید.'
         edit: 'کاربر گرامی شما قادر به ویرایش پست نمی باشید.'
+  errors:
+    messages:
+      carrierwave_processing_error: "خطا در تغییر اندازه عکس."
+      carrierwave_integrity_error: "فایل وارد شده باید یک تصویر باشد."
+      carrierwave_download_error: "خطا در ردیافت تصویر."
+      extension_white_list_error: "شما قادر به بارگذاری فرمت %{extension} روی سرور نیستید, فرمت های مجاز عبارتند از: %{allowed_types}"
+      extension_black_list_error: "شما قادر به بارگذاری فرمت %{extension} روی سرور نیستید, فرمت های ممنوعه عبارتند از: %{prohibited_types}"
