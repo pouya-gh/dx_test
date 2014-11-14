@@ -1,6 +1,6 @@
 <%= bootstrap_form_for([:admin, @post]) do |f| %>
   <%= f.text_field :title, label: t('post.title') %>
   <%= f.text_area :digest, label: t('post.digest') %>
-  <%= f.text_field :tags, label: t('post.tags'), value: @post.tags.join(','), 'data-role' => 'tagsinput' %>
+  <%= f.text_field :tags, label: t('post.tags'), value: @post.tags.join(','), 'data-role' => 'tagsinput', id: 'tagsinput' %>
   <%= f.submit t("post.#{form_type}.text") %>
 <% end %>
