@@ -62,3 +62,10 @@ fa:
       post:
         new: 'کاربر گرامی شما قارد به ایجاد پست نیستید.'
         edit: 'کاربر گرامی شما قادر به ویرایش پست نمی باشید.'
+  errors:
+    messages:
+      carrierwave_processing_error: "خطا در تغییر اندازه عکس."
+      carrierwave_integrity_error: "فایل وارد شده باید یک تصویر باشد."
+      carrierwave_download_error: "خطا در ردیافت تصویر."
+      extension_white_list_error: "شما قادر به بارگذاری فرمت %{extension} روی سرور نیستید, فرمت های مجاز عبارتند از: %{allowed_types}"
+      extension_black_list_error: "شما قادر به بارگذاری فرمت %{extension} روی سرور نیستید, فرمت های ممنوعه عبارتند از: %{prohibited_types}"
