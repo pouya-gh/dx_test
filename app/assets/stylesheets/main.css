@@ -6,6 +6,7 @@ ul.post-tags {
   list-style: none;
   margin: 0;
   padding: 0;
+  margin-top: 5px;
 }
 
 ul.post-tags li {
@@ -24,8 +25,28 @@ ul.post-tags a {
   margin: 0;
   padding: 0;
   float: right;
-  border: 1px solid #DDD;
-  border-radius: 10px;
+  border: 1px solid #999999;
   margin-left: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
+}
+
+.post h1 {
+  font-size: 25px;
+  font-weight: bolder;
+}
+
+.post h1 a {
+  color: #DE8508;
+  text-decoration: none;
+}
+
+.post .date {
+  color: #BBB;
+  position: relative;
+  top: -10px;
+}
+
+.post .post-control-links {
+  position: relative;
+  top: -15px;
 }
