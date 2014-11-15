@@ -3,6 +3,11 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def search
+    # add array of posts returned by where clause to posts returned by find_by_tag
+    @posts = Post.where("title LIKE '%#{params[:q]}%'") | Post.find_by_tag(params[:q])
+  end
+
   private
 
   def check_signed_in

@@ -17,9 +17,9 @@ describe PostsController do
 
   describe "GET #search" do
     before do
-      @posts = []
-      @posts << create(:post, tags: ['rails'])
-      @posts << create(:post, title: 'Testing Ruby on Rails applications')
+      create(:post, tags: ['rails'])
+      create(:post, title: 'another rails app', tags: [:test])
+      create(:post, title: 'Testing Ruby on Rails applications')
       get :search, q: 'rails'
     end
 
@@ -28,7 +28,9 @@ describe PostsController do
     end
 
     it "find posts both by title and tag" do
-      assigns(:posts).should == @posts
+      posts = Post.where("title LIKE '%#{request.query_parameters[:q]}%'") |
+              Post.find_by_tag('rails')
+      assigns(:posts).should == posts
     end
   end
 end
