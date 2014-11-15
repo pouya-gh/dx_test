@@ -5,18 +5,18 @@ var posts = new Bloodhound({
     },
     queryTokenizer: Bloodhound.tokenizers.whitespace,
     remote: {
-        url: '/search?q=%QUERY',
-        filter: function (posts) {
-            // Map the remote source JSON array to a JavaScript array
-            return $.map(posts, function (post) {
-                return {
-                    title: post.title,
-                    id: post.id,
-                    image: post.image.image.small.url,
-                    url: post.url
-                };
-            });
-        }
+      url: '/search?q=%QUERY',
+      filter: function (posts) {
+        // Map the remote source JSON array to a JavaScript array
+        return $.map(posts, function (post) {
+          return {
+            title: post.title,
+            id: post.id,
+            image: post.image.image.small.url,
+            url: post.url
+          };
+        });
+      }
     }
 });
 
