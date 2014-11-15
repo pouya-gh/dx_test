@@ -3,6 +3,10 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def show
+    @post = Post.find(params[:id])
+  end
+
   def search
     # add array of posts returned by where clause to posts returned by find_by_tag
     @posts = Post.where("LOWER(title) LIKE LOWER('%#{params[:q]}%')") | Post.find_by_tag(params[:q])
