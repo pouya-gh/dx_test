@@ -32,6 +32,10 @@ ul.post-tags a {
 
 .post h1 {
   font-size: 25px;
-  color: #DE8508;
   font-weight: bolder;
+}
+
+.post h1 a {
+  color: #DE8508;
+  text-decoration: none;
 }

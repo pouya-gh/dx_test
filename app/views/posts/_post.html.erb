@@ -2,7 +2,7 @@
   <section>
     <%= image_tag post.image.medium.url, class: 'post-image', itemprop: 'thumbnailUrl', size: '200x125' %>
     <header>
-      <h1 itemprop="about"><%= post.title %></h1>
+      <h1 itemprop="about"><%= link_to post.title, post_path(post) %></h1>
       <% if current_user && current_user.admin? %>
       <nav class="post-control-links">
         <%= link_to t('post.delete.text'), admin_post_path(post), method: :delete, 
