@@ -25,4 +25,8 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :digest)
   end
+
+  def default_serializer_options
+    {root: false}
+  end
 end  
