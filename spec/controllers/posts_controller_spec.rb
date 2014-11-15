@@ -28,9 +28,24 @@ describe PostsController do
     end
 
     it "find posts both by title and tag" do
-      posts = Post.where("title LIKE '%#{request.query_parameters[:q]}%'") |
+      posts = Post.where("LOWER(title) LIKE LOWER('%#{request.query_parameters[:q]}%')") |
               Post.find_by_tag('rails')
       assigns(:posts).should == posts
+    end
+  end
+
+  describe "GET #show" do
+    before do
+      @post = create(:post)
+      get :show, id: @post.id
+    end
+
+    it "renders show template" do
+      expect(response).to render_template(:show)
+    end
+
+    it "assigns the post with the id specified in the params to @post" do
+      expect(assigns(:post)).to eql @post
     end
   end
 end
