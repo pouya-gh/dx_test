@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
   def search
     # add array of posts returned by where clause to posts returned by find_by_tag
-    @posts = Post.where("title LIKE '%#{params[:q]}%'") | Post.find_by_tag(params[:q])
+    @posts = Post.where("LOWER(title) LIKE LOWER('%#{params[:q]}%')") | Post.find_by_tag(params[:q])
 
     respond_to do |format|
       format.html # search.html.erb
