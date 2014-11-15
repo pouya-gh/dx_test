@@ -39,3 +39,14 @@ ul.post-tags a {
   color: #DE8508;
   text-decoration: none;
 }
+
+.post .date {
+  color: #BBB;
+  position: relative;
+  top: -10px;
+}
+
+.post .post-control-links {
+  position: relative;
+  top: -15px;
+}
