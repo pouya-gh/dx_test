@@ -39,11 +39,6 @@ $(document).on('ready page:load', function() {
     displayKey: 'value',
     source: posts.ttAdapter(),
     templates: {
-        empty: [
-          '<div class="empty-message">',
-          'unable to find any Best Picture winners that match the current query',
-          '</div>'
-        ].join('\n'),
         suggestion: function(data) { return search_template(data); }
       }
   });
