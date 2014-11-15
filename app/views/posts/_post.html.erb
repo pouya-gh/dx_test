@@ -3,7 +3,7 @@
     <%= image_tag post.image.medium.url, class: 'post-image', itemprop: 'thumbnailUrl', size: '200x125' %>
     <header>
       <h1 itemprop="about"><%= link_to post.title, post_path(post) %></h1>
-      <strong class="date"><%= post.created_at.to_formatted_s(:short) %></strong>
+      <strong class="date"><%= post.created_at.to_date.to_j %></strong>
       <% if current_user && current_user.admin? %>
       <nav class="post-control-links">
         <%= link_to t('post.delete.text'), admin_post_path(post), method: :delete, 
