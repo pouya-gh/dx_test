@@ -47,6 +47,9 @@ gem 'rmagick', '~> 2.13', :require => 'RMagick'
 # serialize json output
 gem 'active_model_serializers'
 
+# serve static gzip assets
+gem 'rack-zippy'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
