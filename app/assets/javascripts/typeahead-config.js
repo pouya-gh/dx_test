@@ -12,7 +12,8 @@ var posts = new Bloodhound({
                 return {
                     title: post.title,
                     id: post.id,
-                    image: post.image.image.small.url
+                    image: post.image.image.small.url,
+                    url: post.url
                 };
             });
         }
@@ -24,7 +25,7 @@ posts.initialize();
 
 function search_template(data) {
   template = [
-    '<a href="#">',
+    '<a href="' + data.url + '">',
     '<strong>' + data.title + '</strong>',
     '<img src="' + data.image + '">',
     '</a>'
