@@ -2,10 +2,11 @@ Devex2::Application.routes.draw do
   get '/home', to: 'posts#index'
   get '/login', to: 'sessions#new'
   get '/logout', to: 'sessions#destroy'
+  get '/search', to: 'posts#search'
   
   resources :users, only: [:new, :create, :show]
   resources :sessions, only: [:new, :create]
-  resources :posts, only: [:index]
+  resources :posts, only: [:index, :show]
   resources :tags, only: [:index]
 
   namespace :admin do

@@ -3,6 +3,20 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def show
+    @post = Post.find(params[:id])
+  end
+
+  def search
+    # add array of posts returned by where clause to posts returned by find_by_tag
+    @posts = Post.where("LOWER(title) LIKE LOWER('%#{params[:q]}%')") | Post.find_by_tag(params[:q])
+
+    respond_to do |format|
+      format.html # search.html.erb
+      format.json { render json: @posts }
+    end
+  end
+
   private
 
   def check_signed_in
@@ -14,5 +28,9 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :digest)
+  end
+
+  def default_serializer_options
+    {root: false}
   end
 end  

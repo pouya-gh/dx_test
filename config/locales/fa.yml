@@ -23,6 +23,7 @@ fa:
     digest: 'چکیده'
     tags: 'برچسب ها'
     image: 'آپلود تصویر'
+    search: 'جستجو'
     create:
       text: 'ایجاد پست'
       success: 'پست با موفقیت ایجاد شد.'
