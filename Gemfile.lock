@@ -97,6 +97,7 @@ GEM
       rspec (>= 2.14, < 4.0)
     hike (1.2.3)
     i18n (0.6.11)
+    jalalidate (0.3.3)
     jbuilder (1.5.3)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
@@ -244,6 +245,7 @@ DEPENDENCIES
   figaro
   guard-rails (~> 0.5.0)
   guard-rspec (~> 4.2.8)
+  jalalidate
   jbuilder (~> 1.2)
   jquery-rails
   meta_request
