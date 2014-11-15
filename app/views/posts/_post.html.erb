@@ -1,18 +1,18 @@
 <article itemscope itemtype="http://schema.org/BlogPosting" class="post">
-  <header>
-    <h1 itemprop="about"><%= post.title %></h1>
-    <% if current_user && current_user.admin? %>
-    <nav class="post-control-links">
-      <%= link_to t('post.delete.text'), admin_post_path(post), method: :delete, 
-      data: { confirm: t('post.delete.confirmation') },
-      class: 'btn btn-danger btn-xs' %>
-      <%= link_to t('post.edit.text'), edit_admin_post_path(post),
-      class: 'btn btn-primary btn-xs' %>
-    </nav>
-    <% end %>
-  </header>
   <section>
     <%= image_tag post.image.medium.url, class: 'post-image', itemprop: 'thumbnailUrl', size: '200x125' %>
+    <header>
+      <h1 itemprop="about"><%= post.title %></h1>
+      <% if current_user && current_user.admin? %>
+      <nav class="post-control-links">
+        <%= link_to t('post.delete.text'), admin_post_path(post), method: :delete, 
+        data: { confirm: t('post.delete.confirmation') },
+        class: 'btn btn-danger btn-xs' %>
+        <%= link_to t('post.edit.text'), edit_admin_post_path(post),
+        class: 'btn btn-primary btn-xs' %>
+      </nav>
+      <% end %>
+    </header>
     <p itemprop="articleBody"><%= post.digest %></p>
   </section>
   <div class="clearfix"></div>
