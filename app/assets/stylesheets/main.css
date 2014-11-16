@@ -73,6 +73,13 @@ fieldset.admin-dashboard-section-separator legend h1 {
   float: right;
   color: #999;
 }
+
+fieldset.admin-dashboard-section-separator legend a {
+  font-size: 14px;
+  position: relative;
+  top: -3px;
+  text-decoration: none;
+}
 /* ===================== End Admin dashboard ================== */
 
 /* ======================== Layout ======================= */
