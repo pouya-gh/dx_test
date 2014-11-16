@@ -1,6 +1,8 @@
 <article itemscope itemtype="http://schema.org/BlogPosting" class="post">
   <section>
+    <span class="hidden-xs">
     <%= image_tag post.image.medium.url, class: 'post-image', itemprop: 'thumbnailUrl', size: '200x125' %>
+    </span>
     <header>
       <h1 itemprop="about"><%= link_to post.title, post_path(post) %></h1>
       <strong class="date"><%= post.created_at.to_date.to_j %></strong>
