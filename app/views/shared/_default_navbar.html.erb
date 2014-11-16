@@ -35,9 +35,33 @@
           </ul>
         </li>
         <% else %>
-          <li><%= link_to t('user.login.text'), login_path %></li>
+          <li dropdown="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= t('user.login.text') %> <span class="caret"></span></a>
+            <div class="dropdown-menu" style="padding: 10px;">
+              <%= form_for(:session, url: sessions_path, html: {role: 'form'}) do |f| %>
+                <div class="form-group">
+                  <%= f.text_field :email, class: 'form-control input-sm',
+                      placeholder: t('user.email') %>
+                </div>
+                <div class="form-group">
+                  <%= f.password_field :password, class: 'form-control input-sm',
+                      placeholder: t('user.password') %>
+                </div>
+                <%= f.submit t('user.login.text'), class: 'btn btn-default btn-sm' %> |
+                <%= link_to t('user.register.text'), signup_path %>
+              <% end %>
+            </div>
+          </li>
         <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+<script>
+  $(function () {
+           $('.dropdown-menu input').click(function (event) {
+               event.stopPropagation();
+           });
+       });
+</script>
