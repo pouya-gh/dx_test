@@ -50,3 +50,7 @@ ul.post-tags a {
   position: relative;
   top: -15px;
 }
+
+.pagination-container {
+  text-align: center;
+}
