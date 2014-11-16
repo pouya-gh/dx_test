@@ -1,3 +1,8 @@
+h1, h2, h3, h4, h5, h6, body, p, ul, hr, fieldset {
+  margin: 0;
+  padding: 0;
+}
+
 .post-control-links {
   margin: 10px 0;
 }
