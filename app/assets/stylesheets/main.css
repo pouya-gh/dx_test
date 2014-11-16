@@ -21,6 +21,11 @@ ul.post-tags a {
   color: #FFF;
 }
 
+.post {
+  border-bottom: 1px solid #EEE;
+  padding-bottom: 6px;
+}
+
 .post .post-image {
   margin: 0;
   padding: 0;
