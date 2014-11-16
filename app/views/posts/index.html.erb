@@ -1,2 +1,5 @@
 <%= content_for(:title, full_title(t('post.index'))) %>
 <%= render @posts %>
+<div class="pagination-container">
+<%= paginate @posts %>
+</div>
