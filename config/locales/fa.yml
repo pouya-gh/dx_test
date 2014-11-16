@@ -71,3 +71,11 @@ fa:
       carrierwave_download_error: "خطا در ردیافت تصویر."
       extension_white_list_error: "شما قادر به بارگذاری فرمت %{extension} روی سرور نیستید, فرمت های مجاز عبارتند از: %{allowed_types}"
       extension_black_list_error: "شما قادر به بارگذاری فرمت %{extension} روی سرور نیستید, فرمت های ممنوعه عبارتند از: %{prohibited_types}"
+
+  views:
+    pagination:
+      first: "&laquo; اولین"
+      last: "آخرین &raquo;"
+      previous: "&lsaquo; قبلی"
+      next: "بعدی &rsaquo;"
+      truncate: "&hellip;"
