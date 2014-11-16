@@ -4,7 +4,7 @@ module Admin
 
     def show
       @user = User.find(params[:id])
-      @posts = current_user.posts
+      @posts = current_user.posts.order('id DESC').limit(3)
       begin
         authorize @user
       rescue Pundit::NotAuthorizedError
