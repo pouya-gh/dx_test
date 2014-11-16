@@ -3,5 +3,6 @@
   <%= f.email_field :email, label: t('user.email') %>
   <%= f.password_field :password, label: t('user.password') %>
   <%= f.password_field :password_confirmation, label: t('user.password_confirmation') %>
-  <%= f.submit t('user.register.text') %>
+  <%= f.submit t('user.register.text') %> |
+  <%= link_to t('user.login.text'), login_path %>
 <% end %>
