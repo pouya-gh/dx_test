@@ -2,6 +2,7 @@ Devex2::Application.routes.draw do
   get '/home', to: 'posts#index'
   get '/login', to: 'sessions#new'
   get '/logout', to: 'sessions#destroy'
+  get '/signup', to: 'users#new'
   get '/search', to: 'posts#search'
   
   resources :users, only: [:new, :create, :show]
