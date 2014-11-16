@@ -59,3 +59,11 @@ ul.post-tags a {
 .pagination-container {
   text-align: center;
 }
+
+.footer {
+  text-align: center;
+  direction: ltr;
+  margin-top: 5px;
+  color: #AAA;
+  /*border-top: 1px solid #EEE;*/
+}
