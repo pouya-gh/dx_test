@@ -1,8 +1,15 @@
 <%= content_for(:title, full_title(t('user.register.text'))) %>
-<%= bootstrap_form_for(@user) do |f| %>
-  <%= f.email_field :email, label: t('user.email') %>
-  <%= f.password_field :password, label: t('user.password') %>
-  <%= f.password_field :password_confirmation, label: t('user.password_confirmation') %>
-  <%= f.submit t('user.register.text') %> |
-  <%= link_to t('user.login.text'), login_path %>
-<% end %>
+<div class="row">
+  <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2">
+    <fieldset>
+      <legend><%= t('user.register.text') %></legend>
+      <%= bootstrap_form_for(@user) do |f| %>
+        <%= f.email_field :email, label: t('user.email') %>
+        <%= f.password_field :password, label: t('user.password') %>
+        <%= f.password_field :password_confirmation, label: t('user.password_confirmation') %>
+        <%= f.submit t('user.register.text') %> |
+        <%= link_to t('user.login.text'), login_path %>
+      <% end %>
+    </fieldset>
+  </div>
+</div>
