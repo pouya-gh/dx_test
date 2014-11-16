@@ -1,8 +1,11 @@
+/* ========================= CSS Resets ============================ */
 h1, h2, h3, h4, h5, h6, body, p, ul, hr, fieldset {
   margin: 0;
   padding: 0;
 }
 
+
+/* ========================== Styling Posts ============================== */
 .post-control-links {
   margin: 10px 0;
 }
@@ -60,7 +63,10 @@ ul.post-tags a {
   position: relative;
   top: -15px;
 }
+/* ======================== End Styling Posts ======================= */
 
+
+/* ======================== Layout ======================= */
 .pagination-container {
   text-align: center;
 }
@@ -72,3 +78,4 @@ ul.post-tags a {
   color: #AAA;
   /*border-top: 1px solid #EEE;*/
 }
+/* ======================== End Layout ======================*/
