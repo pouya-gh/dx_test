@@ -1,5 +1,8 @@
 <% content_for(:title, full_title(t('user.admin.dashboard'))) %>
-<fieldset>
-  <legend><h1><%= t('post.index') %></h1></legend>
+<fieldset class="admin-dashboard-section-separator">
+  <legend>
+    <h1><%= t('post.index') %></h1>
+    <div class="clearfix"></div>
+  </legend> 
 <%= render @posts %>
 </fieldset>
