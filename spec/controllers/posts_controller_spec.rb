@@ -3,11 +3,14 @@ require 'spec_helper'
 describe PostsController do
   describe "GET #index" do
     before do
+      20.times do
+        create(:post)
+      end
       get :index
     end
 
     it "assigns all posts to @posts" do
-      assigns(:posts).should == Post.all
+      expect(assigns(:posts).to_a).to eql Post.order('id DESC').limit(10).to_a
     end
 
     it "renders index template" do
