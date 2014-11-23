@@ -98,3 +98,10 @@ fieldset.admin-dashboard-section-separator legend a {
   /*border-top: 1px solid #EEE;*/
 }
 /* ======================== End Layout ======================*/
+
+
+/* =================== Rack Mini Profiler ===================*/
+.profiler-popup {
+  direction: ltr;
+}
+/* ================= End Rack Mini Profiler =================*/
