@@ -97,6 +97,9 @@ group :test, :development do
 
   # for working with rails panel
   gem 'meta_request'
+
+  # profiling and benchmarking right in the browser
+  gem 'rack-mini-profiler'
 end
 
 # Use ActiveModel has_secure_password
