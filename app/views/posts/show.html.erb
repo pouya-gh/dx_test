@@ -1,6 +1,8 @@
 <%= content_for(:title, full_title(@post.title)) %>
 <%= render @post %>
 
+<%= link_to 'دانلود', download_path(@post.id), title: metadata_for(@post.video.path), "data-toggle" => "tooltip", "data-placement" => "left" %>
+
 <div id="disqus_thread"></div>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
