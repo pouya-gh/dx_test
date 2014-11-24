@@ -16,7 +16,11 @@
       </nav>
       <% end %>
     </header>
-    <p itemprop="articleBody"><%= post.digest %></p>
+    <p itemprop="articleBody">
+      <%= post.digest %>
+      <br>
+      <span class="metadata">(<%= metadata_for post.video.path, :duration %>)</span>
+    </p>
   </section>
   <div class="clearfix"></div>
   <nav>
