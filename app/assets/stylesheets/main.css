@@ -37,6 +37,10 @@ h1, h2, h3, h4, h5, h6, body, p, ul, hr, fieldset {
   margin-bottom: 10px;
 }
 
+.post .metadata {
+  color: #BBB;
+}
+
 .post .post-image {
   margin: 0;
   padding: 0;
