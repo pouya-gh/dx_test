@@ -4,7 +4,7 @@ class PostVideoUploader < CarrierWave::Uploader::Base
   storage :file
 
   def store_dir
-    File.expand_path(File.join(Rails.root, 'app/assets/videos/', model.id))
+    File.join(Rails.root, 'app/assets/videos', model.id.to_s)
   end
 
   def extension_white_list
