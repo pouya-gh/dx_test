@@ -29,9 +29,6 @@ gem 'jbuilder', '~> 1.2'
 # Add bootstrap rtl less files
 gem 'bootstrap_farsi', '~> 3.2'
 
-# Generate Bootstrap Forms
-gem 'bootstrap_form'
-
 # Bootstrap Helpers
 gem 'bh', '~> 1.2'
 

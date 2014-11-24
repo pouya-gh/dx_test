@@ -43,7 +43,6 @@ GEM
       less-rails
       rails (>= 3.2)
       therubyracer
-    bootstrap_form (2.2.0)
     builder (3.1.4)
     callsite (0.0.11)
     capybara (2.2.1)
@@ -254,7 +253,6 @@ DEPENDENCIES
   bh (~> 1.2)
   binding_of_caller
   bootstrap_farsi (~> 3.2)
-  bootstrap_form
   capybara (~> 2.2.1)
   carrierwave (~> 0.10)
   coffee-rails (~> 4.0.0)
