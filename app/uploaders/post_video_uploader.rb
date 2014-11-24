@@ -1,6 +1,9 @@
 # encoding: utf-8
 
 class PostVideoUploader < CarrierWave::Uploader::Base
+  include UploaderHelper
+  after :remove, :delete_empty_upstream_dirs
+  
   storage :file
 
   def store_dir
