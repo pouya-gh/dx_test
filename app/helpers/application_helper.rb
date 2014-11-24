@@ -14,15 +14,15 @@ module ApplicationHelper
     metadata = []
 
     if options.empty?
-      metadata << "duration: #{duration}"
-      metadata << "size: #{size}"
+      metadata << "#{t('post.video.metadata.size')}: #{size}"
+      metadata << "#{t('post.video.metadata.duration')}: #{duration}"
       metadata.join(" | ")
     else
       options.each do |option|
         if option.to_s == "size"
-          metadata << "size: #{size}"
+          metadata << "#{t('post.video.metadata.size')}: #{size}"
         elsif option.to_s == "duration"
-          metadata << "duration: #{duration}"
+          metadata << "#{t('post.video.metadata.duration')}: #{duration}"
         else
           metadata << "#{option.to_s}: #{video.send(option.to_sym)}"
         end
