@@ -67,7 +67,7 @@ module Admin
     end
 
     def post_params
-      temp = params.require(:post).permit(:title, :digest, :tags, :image)
+      temp = params.require(:post).permit(:title, :digest, :tags, :image, :video)
       temp[:tags] = temp[:tags].split(',') if temp[:tags]
       return temp
     end

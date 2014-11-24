@@ -57,6 +57,9 @@ gem 'jalalidate'
 gem 'kaminari', '~> 0.15'
 gem 'kaminari-bootstrap', '~> 3.0.1'
 
+# reading video metadata
+gem 'streamio-ffmpeg'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

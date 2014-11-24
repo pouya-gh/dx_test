@@ -4,6 +4,8 @@ Devex2::Application.routes.draw do
   get '/logout', to: 'sessions#destroy'
   get '/signup', to: 'users#new'
   get '/search', to: 'posts#search'
+
+  get '/downloads/:id', to: 'downloads#get', as: 'download'
   
   resources :users, only: [:new, :create, :show]
   resources :sessions, only: [:new, :create]
