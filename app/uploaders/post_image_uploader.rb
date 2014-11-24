@@ -2,6 +2,10 @@
 
 class PostImageUploader < CarrierWave::Uploader::Base
   include CarrierWave::RMagick
+  
+  include UploaderHelper
+  after :remove, :delete_empty_upstream_dirs
+  
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
