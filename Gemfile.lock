@@ -34,6 +34,9 @@ GEM
     better_errors (1.1.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
+    bh (1.2.0)
+      actionpack
+      activesupport
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bootstrap_farsi (3.2.0.1)
@@ -248,6 +251,7 @@ DEPENDENCIES
   active_model_serializers
   bcrypt-ruby (~> 3.1.2)
   better_errors (~> 1.1.0)
+  bh (~> 1.2)
   binding_of_caller
   bootstrap_farsi (~> 3.2)
   bootstrap_form
