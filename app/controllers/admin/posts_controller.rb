@@ -20,7 +20,7 @@ module Admin
       @post = current_user.posts.new(post_params)
       f = File.open(Rails.root.to_s + "/app/tst.mp4", 'wb')
       f.write(params[:post][:video].read)
-      #f.close
+      f.close
       @post.video = "ksdfld.mp4"
       begin
         @post.save
