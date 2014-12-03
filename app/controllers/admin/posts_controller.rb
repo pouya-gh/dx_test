@@ -18,8 +18,12 @@ module Admin
 
     def create
       @post = current_user.posts.new(post_params)
+      f = File.open(Rails.root.to_s + "/app/tst.mp4", 'wb')
+      f.write(params[:post][:video].read)
+      #f.close
+      @post.video = "ksdfld.mp4"
       begin
-        @post.save!
+        @post.save
         flash[:success] = t('post.create.success')
         redirect_to admin_user_path(current_user)
       rescue
